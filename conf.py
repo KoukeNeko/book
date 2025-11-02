@@ -63,6 +63,9 @@ extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.spelling',
     "sphinx_multiversion",
+    'sphinx.ext.imgconverter',
+    'sphinx.ext.graphviz',
+    'sphinxcontrib.bibtex',
 ]
 
 # Text files with lists of words that shouldn't fail the spellchecker:
@@ -162,24 +165,29 @@ htmlhelp_basename = 'SystemsApproach'
 
 
 # -- Options for LaTeX output ------------------------------------------------
-#latex_engine = 'xelatex'
+latex_engine = 'xelatex'
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    'papersize': 'letterpaper',
+    # 'papersize': 'letterpaper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    'pointsize': '11pt',
+    # 'pointsize': '10pt',
 
-    # Get unicode to work
+    # Additional stuff for the LaTeX preamble.
     #
-    'fontenc': '\\usepackage[LGR,T1]{fontenc}',
+    'preamble': r'''
+\usepackage{xeCJK}
+\setCJKmainfont{STSong}
+\setCJKsansfont{STSong}
+\setCJKmonofont{STSong}
+''',
 
     # Latex figure (float) alignment
     #
-    'figure_align': 'ht',
+    # 'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -260,3 +268,5 @@ def setup(app):
 
     app.add_js_file('https://www.googletagmanager.com/gtag/js?id=G-8NK2HCPFQ5', loading_method="async")
     app.add_js_file(None, body=GA_INVOKE_JS)
+
+bibtex_bibfiles = ['refs.bib']

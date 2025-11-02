@@ -44,6 +44,5 @@ clean-all: clean
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: $(VIRTUALENV) Makefile
-	source ./$</bin/activate ; set -u;\
-  $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+%: Makefile
+	@source ./$(VIRTUALENV)/bin/activate ; PATH="/usr/local/texlive/2025/bin/universal-darwin:$$PATH" $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
