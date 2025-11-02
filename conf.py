@@ -180,9 +180,10 @@ latex_elements = {
     #
     'preamble': r'''
 \usepackage{xeCJK}
-\setCJKmainfont{STSong}
-\setCJKsansfont{STSong}
-\setCJKmonofont{STSong}
+\setCJKmainfont{STSong}[BoldFont=STSong, ItalicFont=STSong, BoldItalicFont=STSong]
+\setCJKsansfont{STSong}[BoldFont=STSong, ItalicFont=STSong, BoldItalicFont=STSong]
+\setCJKmonofont{STSong}[BoldFont=STSong, ItalicFont=STSong, BoldItalicFont=STSong]
+\xeCJKsetup{AutoFakeBold=2, AutoFakeSlant=0.2}
 ''',
 
     # Latex figure (float) alignment
