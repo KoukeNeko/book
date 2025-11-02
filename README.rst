@@ -104,6 +104,27 @@ please add them to the ``dict.txt`` file.
 
 To see the other available output formats, run ``make``.
 
+Build PDF Version
+~~~~~~~~~~~~~~~~~
+
+To generate a PDF version of the book, you need to have a LaTeX distribution
+installed. On macOS, you can install `TeX Live <https://www.tug.org/texlive/>`__
+which includes all the necessary tools.
+
+Additionally, you need to install ImageMagick for image conversion:
+
+.. code:: shell
+
+   $ brew install imagemagick
+
+Once the prerequisites are installed, run:
+
+.. code:: shell
+
+   $ make latexpdf
+
+The generated PDF will be available at ``_build/latex/book.pdf``.
+
 How to Contribute
 -----------------
 
