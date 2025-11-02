@@ -117,7 +117,15 @@ Additionally, you need to install ImageMagick for image conversion:
 
    $ brew install imagemagick
 
-Once the prerequisites are installed, run:
+Once the prerequisites are installed, make sure the TeX Live binaries are in your
+PATH. The installation usually adds them automatically, but if ``latexmk`` is not
+found, you may need to add the TeX Live bin directory to your PATH:
+
+* **macOS**: ``/usr/local/texlive/2025/bin/universal-darwin``
+* **Linux**: ``/usr/local/texlive/2025/bin/x86_64-linux`` (or similar based on your architecture)
+* **Windows**: The TeX Live installation bin directory
+
+Then run:
 
 .. code:: shell
 
